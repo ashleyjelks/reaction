@@ -60,7 +60,6 @@ export class DisplayCanvas extends React.Component<DisplayCanvasProps> {
       <Disclaimer layout={unit.layout}>{unit.disclaimer}</Disclaimer>
     )
 
-    // TODO: Remove the allowlist and env checks after externally served ads are implemented
     if (isHTLAdEnabled()) {
       return (
         <div
@@ -71,7 +70,6 @@ export class DisplayCanvas extends React.Component<DisplayCanvasProps> {
         />
       )
     }
-    // TODO: Determine how to handle DisplayContainer layout and tracking when this component no longer receives unit prop
     return (
       <>
         <a

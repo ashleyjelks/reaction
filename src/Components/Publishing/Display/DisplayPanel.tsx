@@ -369,7 +369,6 @@ export class DisplayPanel extends Component<
     const isVideo = this.isVideo()
     const url = get(unit.assets, "0.url", "")
 
-    // TODO: Remove the allowlist and env checks after externally served ads are implemented
     if (isHTLAdEnabled()) {
       return (
         <div
@@ -381,7 +380,6 @@ export class DisplayPanel extends Component<
       )
     }
 
-    // TODO: Determine how to handle DisplayContainer layout and tracking when this component no longer receives unit prop
     return (
       <>
         {isVideo ? (
