@@ -1,11 +1,13 @@
 import { isHTLAdEnabled } from "Components/Publishing/Ads/EnabledAd"
 import { data as sd } from "sharify"
 
-jest.mock("sharify", () => ({
-  data: {
-    HASHTAG_LAB_ADS_ALLOWLIST: "alloweduser@email.com,alloweduser2@email.com",
-  },
-}))
+jest.mock("sharify", () => {
+  return {
+    data: {
+      HASHTAG_LAB_ADS_ALLOWLIST: "alloweduser@email.com,alloweduser2@email.com",
+    },
+  }
+})
 
 describe("enabled ads feature flag", () => {
   it("checks for allowlisted users", () => {
@@ -20,6 +22,5 @@ describe("enabled ads feature flag", () => {
 
   it("checks for enabled ads", () => {
     expect(isHTLAdEnabled()).toBe(false)
-    expect(isHTLAdEnabled()).not.toBe(true)
   })
 })
