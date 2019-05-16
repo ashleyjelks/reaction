@@ -1,4 +1,4 @@
-import { data as sd } from "sharify"
+// import { data as sd } from "sharify"
 
 /**
  * For now ads, served by Hashtag Labs are only to viewable in the following instances:
@@ -8,19 +8,20 @@ import { data as sd } from "sharify"
  */
 
 export const isHTLAdEnabled = () => {
-  const allowedUsers = (sd.HASHTAG_LAB_ADS_ALLOWLIST || "")
-    .split(",")
-    .filter(Boolean)
-  const currentUser = sd.CURRENT_USER && sd.CURRENT_USER.email // FIXME: Remove after externally served ads are implemented
-  const isAllowedUser = allowedUsers.includes(currentUser)
-  const isAdminUser =
-    (sd.CURRENT_USER && sd.CURRENT_USER.type === "Admin") || false
+  return true
+  // const allowedUsers = (sd.HASHTAG_LAB_ADS_ALLOWLIST || "")
+  //   .split(",")
+  //   .filter(Boolean)
+  // const currentUser = sd.CURRENT_USER && sd.CURRENT_USER.email // FIXME: Remove after externally served ads are implemented
+  // const isAllowedUser = allowedUsers.includes(currentUser)
+  // const isAdminUser =
+  //   (sd.CURRENT_USER && sd.CURRENT_USER.type === "Admin") || false
 
-  if (!sd.HASHTAG_LAB_ADS_ENABLED) {
-    return false
-  }
-  if (isAllowedUser || isAdminUser) {
-    return true
-  }
-  return false
+  // if (!sd.HASHTAG_LAB_ADS_ENABLED) {
+  //   return false
+  // }
+  // if (isAllowedUser || isAdminUser) {
+  //   return true
+  // }
+  // return false
 }
