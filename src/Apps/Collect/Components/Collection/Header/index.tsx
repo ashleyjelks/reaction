@@ -6,7 +6,8 @@ import { cloneDeep, filter, take } from "lodash"
 import React, { FC, useState } from "react"
 import { createFragmentContainer, graphql } from "react-relay"
 import { data as sd } from "sharify"
-import styled from "styled-components"
+// @ts-ignore
+import styled, { StyledComponentClass } from "styled-components"
 import { slugify } from "underscore.string"
 import { resize } from "Utils/resizer"
 import { Responsive } from "Utils/Responsive"
@@ -242,7 +243,6 @@ export const CollectionHeader: FC<Props> = ({ artworks, collection }) => {
     <Responsive>
       {({ xs, sm, md, lg }) => {
         const size = xs ? "xs" : sm ? "sm" : md ? "md" : lg ? "lg" : "xl"
-        const responsiveImageHeight = defaultHeaderImageHeight[size]
         const imageWidth = imageWidthSizes[size]
         const imageHeight = xs ? imageHeightSizes.xs : imageHeightSizes.sm
         const chars = maxChars[size]
@@ -259,6 +259,7 @@ export const CollectionHeader: FC<Props> = ({ artworks, collection }) => {
           mediator,
           user
         )
+        const responsiveImageHeight = defaultHeaderImageHeight[size]
 
         return (
           <header>
