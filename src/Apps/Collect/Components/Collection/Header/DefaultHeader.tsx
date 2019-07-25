@@ -26,7 +26,7 @@ export const CollectionDefaultHeader: FC<Props> = ({
     isSmallViewport: boolean
   ) => {
     let artworkWidthsInOriginalArray = 0
-    let artworkWidthsInRepeatedArray = artworkWidthsInOriginalArray
+    let artworkWidthsInRepeatedArray
     const repeatedArtworksArray = []
 
     allArtworks.forEach(artwork => {
