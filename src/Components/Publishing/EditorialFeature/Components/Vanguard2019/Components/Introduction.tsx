@@ -28,9 +28,15 @@ export const VanguardIntroduction: React.SFC<{
           >
             The Artsy
           </HeaderText>
+          <InvertedHeaderText
+            pt={70}
+            size={["12", "12", "14", "16"]}
+            textAlign="center"
+          >
+            The Artsy
+          </InvertedHeaderText>
         </Media>
       </Box>
-
       <Box background={color("white100")} pt={[80, 100, 150]}>
         <Box mx="auto" maxWidth={980} px={4}>
           <Flex flexDirection="column" alignItems="center" pb={50}>
@@ -79,6 +85,20 @@ const HeaderText = styled(Sans)`
   position: absolute;
   top: 0;
   width: 100%;
+  background-color: ${color("black100")};
+  color: ${color("white100")};
+  z-index: -1;
+  mix-blend-mode: color-dodge;
+`
+
+const InvertedHeaderText = styled(Sans)`
+  position: absolute;
+  top: 0;
+  width: 100%;
+  background-color: ${color("black100")};
+  color: ${color("white100")};
+  z-index: -4;
+  mix-blend-mode: difference;
 `
 
 const IntroContainer = styled(Box)`
